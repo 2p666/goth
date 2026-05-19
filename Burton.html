@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: #f5e6e8;
+}
+
+/* ========================= */
+/* PRIMEIRA PÁGINA - VINHO  */
+/* ========================= */
+
+.section1 {
+    min-height: 100vh;
+    padding: 60px;
+    background: radial-gradient(circle at center, #1a0d12 0%, #0b0608 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    padding: 40px;
+    border: 3px solid #7a1e2d;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(122, 30, 45, 0.6);
+    background-color: rgba(20, 10, 15, 0.85);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3em;
+    color: #a11228;
+    text-shadow: 0 0 15px rgba(161,18,40,0.7);
+}
+
+.arrow {
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 3em;
+    text-decoration: none;
+    animation: float 2s infinite;
+}
+
+.section1 .arrow { color: #a11228; }
+.section2 .arrow { color: #6fa3ff; }
+.section3 .arrow { color: #cccccc; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ========================= */
+/* SEGUNDA PÁGINA - AZUL    */
+/* ========================= */
+
+.section2 {
+    min-height: 100vh;
+    padding: 60px;
+    background: radial-gradient(circle at center, #0d1a2a 0%, #050a14 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container2 {
+    width: 80%;
+    padding: 40px;
+    border: 3px solid #1e3a5f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(30, 58, 95, 0.6);
+    background-color: rgba(10, 20, 35, 0.85);
+    text-align: center;
+}
+
+/* ========================= */
+/* TERCEIRA PÁGINA - CINZA  */
+/* ========================= */
+
+.section3 {
+    min-height: 100vh;
+    padding: 60px;
+    background: radial-gradient(circle at center, #2b2b2b 0%, #0f0f0f 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+}
+
+.container3 {
+    width: 80%;
+    padding: 40px;
+    border: 3px solid #777;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(200,200,200,0.2);
+    background-color: rgba(20, 20, 20, 0.9);
+    text-align: center;
+}
+
+.container3 h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+#contador {
+    font-size: 2em;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- VINHO -->
+<section class="section1">
+    <div class="container">
+        <h1>Para Você</h1>
+        <p>Se você encontrou isso... o destino fez sua parte.</p>
+        <a href="#azul" class="arrow">↓</a>
+    </div>
+</section>
+
+<!-- AZUL -->
+<section class="section2" id="azul">
+    <div class="container2">
+        <h1 style="color:#6fa3ff;">Entre Palavras Não Ditadas</h1>
+        <p>Aqui ficam sentimentos que não cabem no mundo comum.</p>
+        <a href="#cinza" class="arrow">↓</a>
+    </div>
+</section>
+
+<!-- CINZA -->
+<section class="section3" id="cinza">
+    <div class="container3">
+        <h2>Nosso Tempo</h2>
+        <div id="contador"></div>
+    </div>
+</section>
+
+<script>
+
+// DATA DE INÍCIO DO NAMORO
+const dataInicio = new Date("2025-07-01");
+
+// DATA ATUAL
+const hoje = new Date();
+
+// CÁLCULO DA DIFERENÇA EM DIAS
+const diferencaTempo = hoje - dataInicio;
+const dias = Math.floor(diferencaTempo / (1000 * 60 * 60 * 24));
+
+// EXIBIR
+document.getElementById("contador").innerHTML =
+    dias + " dias caminhando lado a lado.";
+
+</script>
+
+</body>
+</html>
