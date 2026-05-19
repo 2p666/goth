@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Fundo absoluto */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IM Fell English SC', serif;
+    /* Ciclo de cores suave que afeta apenas o que for iluminado */
+    animation: cicloCores 25s ease infinite;
+    cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), crosshair;
+}
+
+@keyframes cicloCores {
+    0%, 100% { color: #a11228; } /* Vermelho */
+    25% { color: #1e3a5f; }      /* Azul */
+    50% { color: #ff69b4; }      /* Rosa */
+    75% { color: #777; }         /* Cinza */
+}
+
+/* A LANTERNA: Uma camada acima de tudo que escurece o site */
+#lanterna {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    pointer-events: none;
+    /* O gradiente radial que faz o efeito de "furo" na escuridão */
+    background: radial-gradient(circle 150px at center, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.99) 100%);
+}
+
+.santuario-container {
+    text-align: center;
+    z-index: 10;
+    user-select: none;
+}
+
+/* Estilo dos Textos: Eles precisam ter uma cor base escura para sumirem no preto */
+.vulto-texto p {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    filter: blur(1px); /* Um leve desfoque para parecer fumaça */
+}
+
+.titulo-eterno {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 12px;
+    font-size: 3.5rem;
+    margin: 40px 0;
+}
+
+#mural-eterno {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 6rem;
+}
+
+.infinito {
+    display: inline-block;
+    animation: heartPulse 1.1s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px currentColor); }
+    15% { transform: scale(1.3); filter: drop-shadow(0 0 20px currentColor); }
+    45% { transform: scale(1.15); }
+}
+
+.frase-final {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
